@@ -1,15 +1,20 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-
-import './App.css';
-import Layout from './components/Layout/Layout';
+import { Route, Routes } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import ContactPage from './pages/ContactPage';
+import PolicyPage from './pages/PolicyPage';
+import PageNotFound from './pages/PageNotFound';
 
 function App() {
   return (
     <>
-      <Layout>
-        <h1>Eccomerce App</h1>
-      </Layout>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/policy" element={<PolicyPage />} />
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
     </>
   );
 }
